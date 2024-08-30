@@ -1,9 +1,12 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
 import pickle
+
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error,r2_score
 
 # reading data file
 data = pd.read_csv('../data/data.csv')
@@ -19,7 +22,6 @@ Parental_Support = np.array([
 
 data['Parental Support Numeric'] = Parental_Support
 print(data.head())
-
 
 features = np.array(
     [
@@ -49,5 +51,13 @@ model.fit(x_train,y_train)
 
 y_pred = model.predict(x_test)
 
-with open('../data/model45.pkl','wb') as f:
+
+
+
+
+mse = mean_squared_error(y_test,y_pred)
+r2 = r2_score(y_test,y_pred)
+score = model.score(x_test,y_test)
+
+with open('../models/model45.pkl','wb') as f:
     pickle.dump(model,f)
