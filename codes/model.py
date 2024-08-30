@@ -1,3 +1,5 @@
+# This file is to be used to train the model 
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,7 +11,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error,r2_score
 
 # reading data file
-data = pd.read_csv('../data/data.csv')
+try:
+    data = pd.read_csv('../data/data.csv')
+except Exception as e:
+    print(e)
+    
 display(data.head())
 
 length = len(data)
@@ -21,7 +27,7 @@ Parental_Support = np.array([
 ])
 
 data['Parental Support Numeric'] = Parental_Support
-print(data.head())
+print(f'Data Head: \n{data.head()}')
 
 features = np.array(
     [
@@ -35,29 +41,50 @@ features = np.array(
 target = np.array(['Final Grade'])
 
 x = data[features]
-print(x.head())
+print(f'X Head:\n{x.head()}')
 
 y = data[target]
-print(y.head())
+print(f'Y Head:\n{y.head()}')
 
 x_train,x_test,y_train,y_test = train_test_split(x,y,train_size=0.2,random_state= None)
 #random_state = None gives Random data split everytime executed
 
-print(x_train.head())
-print(y_train.head())
+print(f'X Train Head:\n{x_train.head()}\nY Train Head:\n{y_train.head()}')
 
 model = LinearRegression()
 model.fit(x_train,y_train)
 
 y_pred = model.predict(x_test)
 
+# orignal values
+o_mse = mean_squared_error(y_test,y_pred)
+o_r2 = r2_score(y_test,y_pred)
+o_score = model.score(x_test,y_test)
+
+try: # if model.pkl file already exists
+    with open('../models/model.pkl','rb') as f:
+        loaded_data = pickle.load(f)
+
+        # loaded values
+        y_load = loaded_data.predict(x_test)
+        l_mse = mean_squared_error(y_test,y_load)
+        l_r2 = r2_score(y_test,y_load)
+        l_score = loaded_data.score(x_test,y_test)
+
+        print(f'Mean Square Error:\n(Original):{o_mse}, (Loaded){l_mse}')
+        print(f'R2 Score:\n(Original):{o_r2}, (Loaded){l_r2}')
+        print(f'Score:\n(Original):{o_score}, (Loaded){l_score}')
+
+        if(l_r2 > o_r2):# replaces file only if better score is achieved
+            with open('../models/model.pkl','wb') as f:
+                pickle.dump(model,f)
 
 
-
-
-mse = mean_squared_error(y_test,y_pred)
-r2 = r2_score(y_test,y_pred)
-score = model.score(x_test,y_test)
-
-with open('../models/model45.pkl','wb') as f:
-    pickle.dump(model,f)
+except Exception as e: # if model.pkl file doesnot exists exists
+    print(e)
+    with open('../models/model.pkl','wb') as f:
+        pickle.dump(model,f)
+    
+    print(f'Mean Square Error:{o_mse}')
+    print(f'R2 Score:{o_r2}')
+    print(f'Score:{o_score}')
