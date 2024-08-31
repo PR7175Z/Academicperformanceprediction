@@ -12,38 +12,38 @@ from sklearn.metrics import mean_squared_error,r2_score
 
 # reading data file
 try:
-    data = pd.read_csv('../data/data.csv')
+    data = pd.read_csv('data/data.csv')
 except Exception as e:
     print(e)
 
-display(data.head())
+print(data.head())
 
 length = len(data)
 
 # convert string data to numeric values
 Parental_Support = np.array([
-    0 if data['Parental Support'][i] == 'Low' 
-    else 1 if data['Parental Support'][i] == 'Medium'
+    0 if data['ParentalSupport'][i] == 'Low' 
+    else 1 if data['ParentalSupport'][i] == 'Medium'
     else 2
     for i in range(length)
 ])
 # add the converted data with other array
-data['Parental Support Numeric'] = Parental_Support
+data['ParentalSupportNumeric'] = Parental_Support
 print(f'Data Head: \n{data.head()}')
 
 
 # classifying features 
 features = np.array(
     [
-    'Parental Support Numeric',
-    'Previous Grade',
-    'Study Hours Per Week',
-    'Extracurricular Activities',
-    'Attendance Rate',
+    'ParentalSupportNumeric',
+    'PreviousGrade',
+    'StudyHoursPerWeek',
+    'ExtracurricularActivities',
+    'AttendanceRate',
 ]
 )
 # classifying target
-target = np.array(['Final Grade'])
+target = np.array(['FinalGrade'])
 
 
 # assigning x and y terms
@@ -72,7 +72,7 @@ o_score = model.score(x_test,y_test)
 
 # saving the created model
 try: # if model.pkl file already exists
-    with open('../models/model.pkl','rb') as f:
+    with open('models/model.pkl','rb') as f:
         loaded_data = pickle.load(f)
 
         # loaded values
@@ -86,11 +86,11 @@ try: # if model.pkl file already exists
         print(f'Score:\n(Original):{o_score}, (Loaded){l_score}')
 
         if(l_r2 > o_r2):# replaces file only if better score is achieved
-            with open('../models/model.pkl','wb') as f:
+            with open('models/model.pkl','wb') as f:
                 pickle.dump(model,f)
 except Exception as e: # if model.pkl file doesnot exists exists
     print(e)
-    with open('../models/model.pkl','wb') as f:
+    with open('models/model.pkl','wb') as f:
         pickle.dump(model,f)
     
     print(f'Mean Square Error:{o_mse}')
