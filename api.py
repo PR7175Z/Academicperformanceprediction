@@ -6,7 +6,7 @@ import numpy as np
 
 app = FastAPI()
 
-with open('codes/model.pkl', 'rb') as f:
+with open('models/model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
 
 class feature(BaseModel):
