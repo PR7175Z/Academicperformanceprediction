@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     async function get_response() {
-        const features = {'features': [0, 53.7948461, 18.23871036, 3, 51.6587823 ]};
+        const features = {'features': [0, 20, 80, 3, 51.6587823 ]};
 
         const api = 'http://127.0.0.1:8000/predict';
         const response = await fetch(api,{
