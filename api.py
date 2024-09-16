@@ -33,9 +33,9 @@ class feature(BaseModel):
 @app.post('/predict')
 def predict(data: feature):
     try:
-        scaler = StandardScaler()
+        scaler = joblib.load('models/scaler.pkl')
         features = np.array(data.features).reshape(1, -1)
-        features_reshape = scaler.fit_transform(features)
+        features_reshape = scaler.transform(features)
         prediction = loaded_model.predict(features_reshape)
         return (f'Prediction : {int(prediction)}')
     except Exception as e:
