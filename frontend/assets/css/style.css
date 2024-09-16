@@ -1,3 +1,76 @@
-#inputform input{
+/* #inputform input{
     display: block;
+    } */
+    
+h1{
+    text-align: center;
+    color: #333;
+}
+    
+form{
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label{
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+label span{
+    font-size: 12px;
+    color: #888;
+    margin-left: 5px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+input[type = "text"],
+input[type = "number"],
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type = "submit"]{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+input[type = "submit"]:hover{
+    background-color: #45a049;
+}
+
+.error{
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.message{
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
