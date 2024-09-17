@@ -37,6 +37,6 @@ def predict(data: feature):
         features = np.array(data.features).reshape(1, -1)
         features_reshape = scaler.transform(features)
         prediction = loaded_model.predict(features_reshape)
-        return (f'Prediction : {int(prediction)}')
+        return (int(prediction))
     except Exception as e:
         return HTTPException(status_code = 500, detail = str(e))
