@@ -70,14 +70,6 @@ input[type = "submit"]:hover{
     background-color: #45a049;
 }
 
-.error{
-    color: red;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.message{
-    color: green;
-    font-size: 14px;
-    margin-bottom: 10px;
+.container{
+    text-align: center;
 }
