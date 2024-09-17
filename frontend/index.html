@@ -9,21 +9,26 @@
     <h1>Academic Performance Prediction</h1>
 
     <form id="inputform">
-        <input type="text" name="name" placeholder="Enter Name">
-        <input type="text" name="gender" placeholder="Enter gender">
-        <input type="number" name="attendance" placeholder="Enter attendance">
-        <input type="number" name="studyhour" placeholder="Enter study hour">
-        <input type="number" name="previousgrade" placeholder="Enter previous grade">
-        <input type="number" name="extracurricularactivities" placeholder="Enter number of ECA participated">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="text" name="gender" placeholder="Enter gender" required>
+        <input type="number" name="attendance" placeholder="Enter attendance" required>
+        <input type="number" name="studyhour" placeholder="Enter study hour" required>
+        <input type="number" name="previousgrade" placeholder="Enter previous grade" required>
+        <input type="number" name="extracurricularactivities" placeholder="Enter number of ECA participated" required>
         <label for="parentalsupport">ParentalSupport</label>
-        <select id="parentalsupport" name="parentalsupport">
-            <option value="1">High</option>
+        <select id="parentalsupport" name="parentalsupport" required>
+            <option value="0" selected>High</option>
             <option value="2">Medium</option>
-            <option value="3">Low</option>
+            <option value="1">Low</option>
         </select>
         <input type="submit" name="submit" value="Submit">
     </form>
 
+    <div class="container">
+        <div id="result">
+            
+        </div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
