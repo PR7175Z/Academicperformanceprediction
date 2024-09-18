@@ -66,4 +66,11 @@ Then you are good to go.
   ```
   For all of this to work the virtual environment should be properly setup.
 
+## Contributors
+[See the list of contributors here](Contributions.txt)
+
+## Contributors
+[See the list report here](report.docx)
+
+
     
