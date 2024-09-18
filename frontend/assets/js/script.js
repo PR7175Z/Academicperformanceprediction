@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 if(response > 100) response =100;
 
                 prediction.innerHTML = `Your academic score is predicted to be: ${response}`;
+                resultDisplay.innerHTML = '';
                 resultDisplay.appendChild(heading);
                 resultDisplay.appendChild(prediction);
                 container.style.display = 'block';
