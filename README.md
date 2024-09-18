@@ -50,3 +50,14 @@ Follow these steps to set up the project:
     python app.py
     ```
 
+
+Readme info
+
+Usage: 
+  When the user submits the form, the form fields are sent as request text to the API. Then the API predicts the academic performance and returns the response/ prediction for the provided features.
+
+  For running the frontend script, first open the main directory and then navigate to frontend folder then open the index.html file by double click on it.
+
+  For running the backend, open the main directory in command line, then activate the virtual environment, then type uvicorn api:app --reload. If uvicorn is not installed install uvicorn by typing pip install uvicorn. For all of this to work the virtual environment should be properly setup.
+
+    
