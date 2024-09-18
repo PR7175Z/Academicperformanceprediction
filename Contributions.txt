@@ -1,5 +1,4 @@
 Involvement by group members:
-
 Aadim Prajapati (Backend):
 Developed the API using Fast API to predict the models’ operations and interactions. Mapping the model to a well designed, fast, and scalable API endpoint, ensuring that there are effective interactions of the model with the frontend.
 
