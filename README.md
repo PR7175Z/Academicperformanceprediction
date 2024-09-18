@@ -18,7 +18,9 @@ relationships dynamically.
 The dataset used in this project includes the following features:
 - **Study Hours per Week:** The number of hours students spend studying each week.
 - **Parental Support:** Levels of parental support categorized as low, medium, and high.
-- **Academic Performance:** Measured through student grades or standardized test scores.
+- **Previous Grade:** Measured through student grades or standardized test scores.
+- **Extra Curricular Activities:** The number of ECA participated by the students.
+- **Attendance:** The percentage of classes attended by the student.
 
 The data is preprocessed and split into training and testing sets for regression analysis.
 
@@ -43,8 +45,25 @@ Follow these steps to set up the project:
     ```bash
     pip install -r requirements.txt
     ```
-4. **Run Application**
-    ```bash
-    python app.py
-    ```
+Then you are good to go.
 
+
+## Readme info
+
+**Usage**: 
+  When the user submits the form, the form fields are sent as request text to the API. Then the API predicts the academic performance and returns the response/ prediction for the provided features.
+
+  For running the frontend script, first open the main directory and then navigate to frontend folder then open the index.html file by double click on it.
+
+  For running the backend, open the main directory in command line, then activate the virtual environment, 
+  then type 
+  ```bash
+    uvicorn api:app --reload
+  ```
+  If uvicorn is not installed install uvicorn by typing 
+  ```bash
+    pip install uvicorn
+  ```
+  For all of this to work the virtual environment should be properly setup.
+
+    

@@ -10,9 +10,9 @@
 
     <form id="inputform">
         <input type="text" name="name" placeholder="Enter Name" required>
-        <input type="number" name="attendance" placeholder="Enter attendance" required>
-        <input type="number" name="studyhour" placeholder="Enter study hour" required>
-        <input type="number" name="previousgrade" placeholder="Enter previous grade" required>
+        <input type="number" name="attendance" placeholder="Enter attendance (%)" required>
+        <input type="number" name="studyhour" placeholder="Enter study hour per week" required>
+        <input type="number" name="previousgrade" min="0" max="100" step="1" placeholder="Enter previous grade (max: 100)" required>
         <input type="number" name="extracurricularactivities" placeholder="Enter number of ECA participated" required>
         <label for="parentalsupport">ParentalSupport</label>
         <select id="parentalsupport" name="parentalsupport" required>
