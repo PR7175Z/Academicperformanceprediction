@@ -1,0 +1,11 @@
+Group member’s contributions:
+Aadim Prajapati (Backend):
+Created the API using FastAPI to handle model prediction requests and responses. Integrated the model with a scalable and efficient API endpoint, ensuring smooth communication between the model and the frontend.
+
+Aashish Chakradhar (Model Devloper) : 
+Trained the machine learning model using relevant datasets. Fine-tuned hyperparameters to achieve optimal accuracy and performance. Provided feedback on data pre-processing and feature selection.
+
+Kiran Khayamali (Team Lead, Tester): 
+Tested the model extensively to identify potential issues. Worked on fine-tuning the model for improved results, running experiments, and ensuring its predictions were accurate and reliable.
+
+Rajip Tuitui (Documenter and Frontend): Developed the frontend interface and ensured smooth interaction between the frontend and the backend API. Implemented the API calls to fetch model predictions and integrated them into the user interface for a seamless experience.

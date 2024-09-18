@@ -9,12 +9,21 @@
     <h1>Academic Performance Prediction</h1>
 
     <form id="inputform">
+        <label for="name">Name</label>
         <input type="text" name="name" placeholder="Enter Name" required>
-        <input type="number" name="attendance" placeholder="Enter attendance (%)" required>
-        <input type="number" name="studyhour" placeholder="Enter study hour per week" required>
+
+        <label for="attendance">Attendance</label>
+        <input type="number" name="attendance" min="0" max="100" step="1" placeholder="Enter attendance (%)" required>
+
+        <label for="studyhour">Study Hour</label>
+        <input type="number" name="studyhour" min="0" max="100" step="1" placeholder="Enter study hour per week (max: 100 hrs) " required>
+
+        <label for="previousgrade">Previous Grade</label>
         <input type="number" name="previousgrade" min="0" max="100" step="1" placeholder="Enter previous grade (max: 100)" required>
+
+        <label for="extracurricularactivities">Extracurricular Activities</label>
         <input type="number" name="extracurricularactivities" placeholder="Enter number of ECA participated" required>
-        <label for="parentalsupport">ParentalSupport</label>
+        <label for="parentalsupport">Parental Support</label>
         <select id="parentalsupport" name="parentalsupport" required>
             <option value="0" selected>High</option>
             <option value="2">Medium</option>
