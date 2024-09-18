@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 const response = await get_response( parseInt(parentalSupport), previousGrade, studyHour, extraCurricularActivities, attendance);
 
                 prediction.innerHTML = `Your academic score is predicted to be: ${response}`;
+                resultDisplay.innerHTML = '';
                 resultDisplay.appendChild(heading);
                 resultDisplay.appendChild(prediction);
                 container.style.display = 'block';
