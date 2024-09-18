@@ -69,7 +69,7 @@ Then you are good to go.
 ## Contributors
 [See the list of contributors here](Contributions.txt)
 
-## Contributors
+## Report
 [See the list report here](report.docx)
 
 
