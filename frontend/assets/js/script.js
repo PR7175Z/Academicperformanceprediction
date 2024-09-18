@@ -38,8 +38,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             try {
                 const heading = document.createElement('h3');
                 const prediction = document.createElement('p');
-                heading.innerHTML = `Hello ${name}`;
-                const response = await get_response( parseInt(parentalSupport), previousGrade, studyHour, extraCurricularActivities, attendance);
+                heading.innerHTML = `Hello!!! ${name}`;
+                let response = await get_response( parseInt(parentalSupport), previousGrade, studyHour, extraCurricularActivities, attendance);
+                if(response > 100) response =100;
 
                 prediction.innerHTML = `Your academic score is predicted to be: ${response}`;
                 resultDisplay.appendChild(heading);
