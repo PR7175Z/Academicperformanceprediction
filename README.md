@@ -18,7 +18,9 @@ relationships dynamically.
 The dataset used in this project includes the following features:
 - **Study Hours per Week:** The number of hours students spend studying each week.
 - **Parental Support:** Levels of parental support categorized as low, medium, and high.
-- **Academic Performance:** Measured through student grades or standardized test scores.
+- **Previous Grade:** Measured through student grades or standardized test scores.
+- **Extra Curricular Activities:** The number of ECA participated by the students.
+- **Attendance:** The percentage of classes attended by the student.
 
 The data is preprocessed and split into training and testing sets for regression analysis.
 
