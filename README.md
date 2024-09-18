@@ -48,3 +48,8 @@ Follow these steps to set up the project:
     python app.py
     ```
 
+5. **Run Application**
+    ```bash
+    python app.py
+    ```
+    
